@@ -1,18 +1,20 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { href: "#services", label: "Services" },
-  { href: "#portfolio", label: "Portfolio" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "/services", label: "Services" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +23,10 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location]);
 
   return (
     <motion.header
@@ -36,7 +42,7 @@ const Header = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <div className="relative w-10 h-10">
               {/* Geometric Cube Logo */}
               <svg viewBox="0 0 40 40" className="w-full h-full">
@@ -71,26 +77,32 @@ const Header = () => {
               <span className="font-display font-bold text-lg tracking-wider text-foreground">
                 VOXEL SPACE
               </span>
-              <span className="text-[10px] text-muted-foreground tracking-widest uppercase">
+              <span className="text-[10px] text-muted-foreground tracking-widest uppercase hidden sm:block">
                 Commercial Property Digital Twins
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
-                className="font-display text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
+                to={link.href}
+                className={`font-display text-sm font-medium transition-colors tracking-wide uppercase ${
+                  location.pathname === link.href || location.pathname.startsWith(link.href + "/")
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <Button variant="hero" size="default">
-              Get a Quote
-            </Button>
+            <Link to="/contact">
+              <Button variant="hero" size="default">
+                Get a Quote
+              </Button>
+            </Link>
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -114,18 +126,23 @@ const Header = () => {
           >
             <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
-                  className="font-display text-base font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  to={link.href}
+                  className={`font-display text-base font-medium transition-colors tracking-wide uppercase py-2 ${
+                    location.pathname === link.href
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
-              <Button variant="hero" size="lg" className="mt-4">
-                Get a Quote
-              </Button>
+              <Link to="/contact">
+                <Button variant="hero" size="lg" className="mt-4 w-full">
+                  Get a Quote
+                </Button>
+              </Link>
             </nav>
           </motion.div>
         )}

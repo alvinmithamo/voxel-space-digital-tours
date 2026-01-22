@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
 
 const Footer = () => {
@@ -9,7 +10,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-6">
+            <Link to="/" className="flex items-center gap-3 mb-6">
               <div className="relative w-10 h-10">
                 <svg viewBox="0 0 40 40" className="w-full h-full">
                   <defs>
@@ -43,19 +44,24 @@ const Footer = () => {
                   VOXEL SPACE
                 </span>
               </div>
-            </div>
+            </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               Transforming commercial properties into interactive digital assets. 
               Empowering businesses across Kenya and East Africa.
             </p>
             <div className="flex gap-4">
-              {[Linkedin, Twitter, Instagram, Facebook].map((Icon, index) => (
+              {[
+                { icon: Linkedin, href: "#" },
+                { icon: Twitter, href: "#" },
+                { icon: Instagram, href: "#" },
+                { icon: Facebook, href: "#" },
+              ].map(({ icon: Icon, href }, index) => (
                 <a
                   key={index}
-                  href="#"
-                  className="w-9 h-9 rounded-lg bg-muted hover:bg-primary/20 flex items-center justify-center transition-colors"
+                  href={href}
+                  className="w-9 h-9 rounded-lg bg-muted hover:bg-primary/20 flex items-center justify-center transition-colors group"
                 >
-                  <Icon className="w-4 h-4 text-muted-foreground hover:text-primary" />
+                  <Icon className="w-4 h-4 text-muted-foreground group-hover:text-primary" />
                 </a>
               ))}
             </div>
@@ -67,15 +73,19 @@ const Footer = () => {
               Services
             </h4>
             <ul className="space-y-3">
-              {["Virtual Tours", "360° Videography", "Hosting Solutions", "CRM Integration", "Custom Development"].map(
-                (item) => (
-                  <li key={item}>
-                    <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                      {item}
-                    </a>
-                  </li>
-                )
-              )}
+              {[
+                { label: "Virtual Tours", href: "/services/virtual-tours" },
+                { label: "360° Videography", href: "/services/videography" },
+                { label: "Hosting Solutions", href: "/services/hosting" },
+                { label: "CRM Integration", href: "/services/hosting" },
+                { label: "Custom Development", href: "/contact" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link to={item.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -85,11 +95,17 @@ const Footer = () => {
               Company
             </h4>
             <ul className="space-y-3">
-              {["About Us", "Portfolio", "Blog", "Careers", "Contact"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                    {item}
-                  </a>
+              {[
+                { label: "About Us", href: "/about" },
+                { label: "Portfolio", href: "/portfolio" },
+                { label: "Blog", href: "/blog" },
+                { label: "Careers", href: "/careers" },
+                { label: "Contact", href: "/contact" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link to={item.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -129,12 +145,12 @@ const Footer = () => {
             © {currentYear} Voxel Space Ltd. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+            <Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link to="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>
