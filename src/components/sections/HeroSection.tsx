@@ -29,6 +29,11 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             <span className="inline-block font-display text-sm font-semibold tracking-[0.3em] uppercase text-primary mb-6 px-4 py-2 rounded-full border border-primary/30 bg-primary/5">
               Digital Twins for Commercial Properties
             </span>
