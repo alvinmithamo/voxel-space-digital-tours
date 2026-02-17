@@ -45,7 +45,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Voxel Space Logo" className="w-15 h-15 md:w-20 md:h-20 object-contain" />
+            <img src={logo} alt="Voxel Space Logo" className="w-30 h-20 md:w-30 md:h-30 object-contain" />
           </Link>
 
           {/* Desktop Navigation */}
