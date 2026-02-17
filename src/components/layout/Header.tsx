@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/voxel3.png"
 
 const navLinks = [
    { href: "/", label: "Home" },
@@ -41,47 +42,10 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="relative w-10 h-10">
-              {/* Geometric Cube Logo */}
-              <svg viewBox="0 0 40 40" className="w-full h-full">
-                <defs>
-                  <linearGradient id="cubeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="hsl(210 70% 55%)" />
-                    <stop offset="100%" stopColor="hsl(180 50% 45%)" />
-                  </linearGradient>
-                </defs>
-                {/* Wireframe Cube */}
-                <path
-                  d="M20 4 L36 12 L36 28 L20 36 L4 28 L4 12 Z"
-                  fill="none"
-                  stroke="url(#cubeGradient)"
-                  strokeWidth="1.5"
-                />
-                <path
-                  d="M4 12 L20 20 L36 12"
-                  fill="none"
-                  stroke="url(#cubeGradient)"
-                  strokeWidth="1.5"
-                />
-                <path
-                  d="M20 20 L20 36"
-                  fill="none"
-                  stroke="url(#cubeGradient)"
-                  strokeWidth="1.5"
-                />
-              </svg>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-display font-bold text-lg tracking-wider text-foreground">
-                VOXEL SPACE
-              </span>
-              <span className="text-[10px] text-muted-foreground tracking-widest uppercase hidden sm:block">
-                Commercial Property Digital Twins
-              </span>
-            </div>
+            <img src={logo} alt="Voxel Space Logo" className="w-15 h-15 md:w-20 md:h-20 object-contain" />
           </Link>
 
           {/* Desktop Navigation */}
