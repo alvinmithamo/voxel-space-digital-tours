@@ -30,14 +30,7 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-24 md:py-32 bg-card relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 geometric-grid opacity-10" />
-      
-      {/* Decorative Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 border border-primary/20 rounded-full" />
-      <div className="absolute bottom-20 right-10 w-32 h-32 border border-primary/10 rounded-full" />
-
+    <section className="py-24 md:py-32 bg-gray-50 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Section Header */}
         <motion.div
@@ -64,12 +57,12 @@ const TestimonialsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="relative bg-background rounded-2xl p-8 border border-border hover:border-primary/30 transition-all duration-300"
+              className="relative bg-white rounded-2xl p-8 border border-gray-200 hover:border-gray-300 transition-all duration-200"
             >
               {/* Quote Icon */}
               <div className="absolute -top-4 left-8">
-                <div className="w-8 h-8 rounded-lg bg-accent-gradient flex items-center justify-center">
-                  <Quote className="w-4 h-4 text-primary-foreground" />
+                <div className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
+                  <Quote className="w-4 h-4 text-primary" />
                 </div>
               </div>
 
@@ -90,7 +83,7 @@ const TestimonialsSection = () => {
 
               {/* Author */}
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
                   <span className="font-display font-bold text-lg text-primary">
                     {testimonial.author.charAt(0)}
                   </span>

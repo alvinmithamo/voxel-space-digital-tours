@@ -167,7 +167,7 @@ const About = () => {
         </section>
 
         {/* Team Section */}
-        <section className="py-20 bg-card">
+        {/* <section className="py-20 bg-card">
           <div className="container mx-auto px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -207,7 +207,7 @@ const About = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Timeline Section */}
         <section className="py-20 bg-background">

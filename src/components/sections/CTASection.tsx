@@ -4,14 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const CTASection = () => {
   return (
-    <section id="contact" className="py-24 md:py-32 bg-background relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-accent-teal/5 rounded-full blur-3xl" />
-      </div>
-      <div className="absolute inset-0 geometric-grid opacity-20" />
-
+    <section id="contact" className="py-24 md:py-32 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -20,11 +13,7 @@ const CTASection = () => {
           transition={{ duration: 0.7 }}
           className="max-w-4xl mx-auto"
         >
-          <div className="bg-card-gradient rounded-3xl p-8 md:p-12 lg:p-16 border border-border relative overflow-hidden">
-            {/* Decorative Elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-            <div className="absolute -bottom-20 -left-20 w-40 h-40 border border-primary/10 rounded-full" />
-
+          <div className="bg-gray-50 rounded-3xl p-8 md:p-12 lg:p-16 border border-gray-200 relative overflow-hidden">
             <div className="relative z-10">
               <div className="text-center mb-10">
                 <span className="inline-block font-display text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-4">

@@ -46,10 +46,7 @@ const cardVariants = {
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 md:py-32 bg-card relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 geometric-grid opacity-20" />
-      
+    <section id="services" className="py-24 md:py-32 bg-gray-50 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Section Header */}
         <motion.div
@@ -83,11 +80,11 @@ const ServicesSection = () => {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="group relative bg-card-gradient rounded-2xl p-8 border border-border hover:border-primary/50 transition-all duration-500 hover:shadow-glow"
+              className="group relative bg-white rounded-2xl p-8 border border-gray-200 hover:border-gray-300 transition-all duration-300"
             >
               {/* Icon */}
-              <div className="w-14 h-14 rounded-xl bg-accent-gradient flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <service.icon className="w-7 h-7 text-primary-foreground" />
+              <div className="w-14 h-14 rounded-xl bg-gray-100 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
+                <service.icon className="w-7 h-7 text-primary" />
               </div>
 
               {/* Content */}

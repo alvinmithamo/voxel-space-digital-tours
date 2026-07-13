@@ -80,6 +80,16 @@ const projects = [
     description: "Exclusive gated community with luxurious family homes.",
     image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
   },
+  {
+    id: 9,
+    title: "Interactive 3D Sandbox",
+    category: "Commercial Office",
+    location: "Virtual Demo",
+    result: "Live immersive experience",
+    description: "Experience our cutting-edge 3D virtual tour technology in this interactive sandbox environment.",
+    is3DTour: true,
+    tourUrl: "https://realsee.ai/p8EEa2P6?unbranded=1",
+  },
 ];
 
 const Portfolio = () => {
@@ -150,16 +160,39 @@ const Portfolio = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="group bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all"
                 >
-                  <div className="aspect-[4/3] overflow-hidden relative">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-60" />
-                    <button className="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <ExternalLink className="w-4 h-4 text-foreground" />
-                    </button>
+                  <div className="aspect-[4/3] overflow-hidden relative bg-black">
+                    {project.is3DTour ? (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.98 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 0.1 }}
+                        className="w-full h-full"
+                      >
+                        <iframe
+                          src={project.tourUrl}
+                          allowFullScreen={true}
+                          frameBorder="0"
+                          loading="lazy"
+                          title="3D Virtual Tour"
+                          className="w-full h-full"
+                        />
+                        <div className="absolute bottom-4 right-4 bg-black/60 backdrop-blur-sm px-3 py-1 text-[10px] uppercase tracking-tighter text-slate-300 border border-white/10 pointer-events-none">
+                          Active 3D Sandbox Environment
+                        </div>
+                      </motion.div>
+                    ) : (
+                      <>
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-60" />
+                        <button className="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                          <ExternalLink className="w-4 h-4 text-foreground" />
+                        </button>
+                      </>
+                    )}
                   </div>
                   <div className="p-6">
                     <span className="inline-block text-xs font-semibold tracking-wider uppercase text-primary mb-2">
