@@ -9,6 +9,7 @@ const navLinks = [
   { href: "/#spaces", label: "Spaces" },
   { href: "/#process", label: "Process" },
   { href: "/#contact", label: "Contact" },
+  { href: "/portfolio", label: "Our Work" },
 ];
 
 const Header = () => {
