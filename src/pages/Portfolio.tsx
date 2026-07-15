@@ -10,6 +10,16 @@ const categories = ["All", "Commercial Office", "Retail", "Hospitality", "Reside
 const projects = [
   {
     id: 1,
+    title: "Studio Apartment Tour",
+    category: "Residential",
+    location: "Virtual Demo",
+    result: "Live immersive experience",
+    description: "Experience our cutting-edge 3D virtual tour technology in this interactive sandbox environment.",
+    is3DTour: true,
+    tourUrl: "https://kuula.co/share/LYcNk?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1",
+  },
+  {
+    id: 2,
     title: "Westlands Business Park",
     category: "Commercial Office",
     location: "Nairobi, Kenya",
@@ -18,7 +28,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
   },
   {
-    id: 2,
+    id: 3,
     title: "Karen Shopping Mall",
     category: "Retail",
     location: "Nairobi, Kenya",
@@ -27,7 +37,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
   },
   {
-    id: 3,
+    id: 4,
     title: "Kilimani Towers",
     category: "Residential",
     location: "Nairobi, Kenya",
@@ -36,7 +46,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
   },
   {
-    id: 4,
+    id: 5,
     title: "Serena Safari Lodge",
     category: "Hospitality",
     location: "Masai Mara, Kenya",
@@ -45,7 +55,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80",
   },
   {
-    id: 5,
+    id: 6,
     title: "Gateway Mall Mombasa",
     category: "Retail",
     location: "Mombasa, Kenya",
@@ -54,7 +64,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=800&q=80",
   },
   {
-    id: 6,
+    id: 7,
     title: "Riverside Office Complex",
     category: "Commercial Office",
     location: "Nairobi, Kenya",
@@ -63,7 +73,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
   },
   {
-    id: 7,
+    id: 8,
     title: "Lake Naivasha Resort",
     category: "Hospitality",
     location: "Naivasha, Kenya",
@@ -72,7 +82,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
   },
   {
-    id: 8,
+    id: 9,
     title: "Runda Gardens Estate",
     category: "Residential",
     location: "Nairobi, Kenya",
@@ -80,16 +90,7 @@ const projects = [
     description: "Exclusive gated community with luxurious family homes.",
     image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
   },
-  {
-    id: 9,
-    title: "Interactive 3D Sandbox",
-    category: "Commercial Office",
-    location: "Virtual Demo",
-    result: "Live immersive experience",
-    description: "Experience our cutting-edge 3D virtual tour technology in this interactive sandbox environment.",
-    is3DTour: true,
-    tourUrl: "https://realsee.ai/p8EEa2P6?unbranded=1",
-  },
+  
 ];
 
 const Portfolio = () => {
