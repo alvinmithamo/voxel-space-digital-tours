@@ -13,12 +13,14 @@ import {
 
 const nextSteps = [
   { step: "1", title: "Briefing call", description: "A 30-minute conversation about your space, goals, and audience." },
-  { step: "2", title: "Custom proposal", description: "We'll share a tailored scope, timeline, and fixed price within 48 hours." },
+  { step: "2", title: "Custom proposal", description: "We'll share a tailored scope, timeline, and fixed price within 24 hours." },
   { step: "3", title: "On-site capture", description: "Our team comes to you. Most captures are completed in a single day." },
 ];
 
 const ContactSection = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,10 +29,39 @@ const ContactSection = () => {
     spaceType: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || (!formData.email && !formData.phone)) return;
-    setIsSubmitted(true);
+    
+    setIsSubmitting(true);
+    setError("");
+
+    try {
+      const response = await fetch("https://formspree.io/f/mrenbvyp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          spaceType: formData.spaceType,
+          _subject: "New contact lead form submission from Voxel Space website",
+        }),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        setError("Something went wrong. Please try again or email us directly at info@voxelspaceke.com");
+      }
+    } catch (err) {
+      setError("Something went wrong. Please try again or email us directly at info@voxelspaceke.com");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -75,6 +106,11 @@ const ContactSection = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
+                {error && (
+                  <div className="rounded-lg border border-destructive/50 bg-destructive/10 p-4 text-sm text-destructive">
+                    {error}
+                  </div>
+                )}
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Name <span className="text-muted-foreground">*</span>
@@ -135,7 +171,7 @@ const ContactSection = () => {
                       <SelectValue placeholder="Select a category…" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="hotel">Hotel / guesthouse</SelectItem>
+                      <SelectItem value="hotel">Hotel / guesthouse / AirBnB</SelectItem>
                       <SelectItem value="restaurant">Restaurant / café / bar</SelectItem>
                       <SelectItem value="retail">Retail / showroom</SelectItem>
                       <SelectItem value="event">Event venue</SelectItem>
@@ -147,10 +183,11 @@ const ContactSection = () => {
 
                 <Button
                   type="submit"
+                  disabled={isSubmitting}
                   className="rounded-full bg-foreground text-background hover:bg-foreground/90 font-sans normal-case tracking-normal px-6"
                 >
-                  Submit
-                  <ArrowRight className="w-4 h-4" />
+                  {isSubmitting ? "Submitting..." : "Submit"}
+                  {!isSubmitting && <ArrowRight className="w-4 h-4" />}
                 </Button>
               </form>
             )}
