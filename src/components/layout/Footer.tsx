@@ -68,13 +68,13 @@ const Footer = () => {
               <li>
                 <a href="tel:+254700000000" className="flex items-center gap-2 text-sm text-background/80 hover:text-background transition-colors">
                   <Phone className="w-4 h-4 shrink-0" />
-                  +254 700 000 000
+                  +254 742 742 872
                 </a>
               </li>
               <li>
                 <a href="mailto:info@voxelspace.co.ke" className="flex items-center gap-2 text-sm text-background/80 hover:text-background transition-colors">
                   <Mail className="w-4 h-4 shrink-0" />
-                  info@voxelspace.co.ke
+                  info@voxelspaceke.com
                 </a>
               </li>
               <li className="flex items-start gap-2 text-sm text-background/80">
