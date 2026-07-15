@@ -56,9 +56,7 @@ const About = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        {/* Hero Section */}
-        <section className="pt-32 pb-20 bg-hero-gradient relative overflow-hidden">
-          <div className="absolute inset-0 geometric-grid opacity-20" />
+        <section className="pt-32 pb-20 bg-secondary/50 relative overflow-hidden">
           <div className="container mx-auto px-4 md:px-6 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -66,11 +64,11 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="max-w-3xl mx-auto text-center"
             >
-              <span className="inline-block font-display text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-4">
+              <span className="inline-block font-sans text-sm font-semibold tracking-wider uppercase text-foreground/60 mb-4">
                 About Us
               </span>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                Bridging Physical and <span className="text-gradient">Digital Spaces</span>
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-6">
+                Bridging Physical and <span className="italic">Digital Spaces</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Founded in 2025 in Nairobi, Voxel Space Ltd is pioneering the digital transformation 
@@ -80,8 +78,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* Mission Section */}
-        <section className="py-20 bg-card">
+        <section className="py-20">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <motion.div
@@ -90,7 +87,7 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
+                <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
                   Our Mission
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">
@@ -117,9 +114,9 @@ const About = () => {
                   { icon: Award, label: "Matterport", sublabel: "Certified" },
                   { icon: Target, label: "40%", sublabel: "Avg. Lead Increase" },
                 ].map((stat, index) => (
-                  <div key={index} className="bg-background rounded-xl p-6 text-center border border-border">
-                    <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-                    <div className="font-display font-bold text-xl text-foreground">{stat.label}</div>
+                  <div key={index} className="bg-secondary/50 rounded-xl p-6 text-center border border-border">
+                    <stat.icon className="w-8 h-8 text-foreground mx-auto mb-3" />
+                    <div className="font-serif font-bold text-xl text-foreground">{stat.label}</div>
                     <div className="text-sm text-muted-foreground">{stat.sublabel}</div>
                   </div>
                 ))}
@@ -128,8 +125,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* Values Section */}
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-secondary/50">
           <div className="container mx-auto px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -138,7 +134,7 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-12"
             >
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
                 Our Values
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -153,12 +149,12 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-card rounded-2xl p-8 border border-border hover:border-primary/30 transition-all text-center"
+                  className="bg-background rounded-2xl p-8 border border-border hover:border-border/80 transition-all text-center"
                 >
-                  <div className="w-14 h-14 rounded-xl bg-accent-gradient flex items-center justify-center mx-auto mb-6">
-                    <value.icon className="w-7 h-7 text-primary-foreground" />
+                  <div className="w-14 h-14 rounded-xl bg-secondary flex items-center justify-center mx-auto mb-6">
+                    <value.icon className="w-7 h-7 text-foreground" />
                   </div>
-                  <h3 className="font-display text-xl font-bold text-foreground mb-3">{value.title}</h3>
+                  <h3 className="font-serif text-xl text-foreground mb-3">{value.title}</h3>
                   <p className="text-muted-foreground">{value.description}</p>
                 </motion.div>
               ))}
@@ -166,51 +162,8 @@ const About = () => {
           </div>
         </section>
 
-        {/* Team Section */}
-        {/* <section className="py-20 bg-card">
-          <div className="container mx-auto px-4 md:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-12"
-            >
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Meet Our Team
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                The passionate professionals behind Voxel Space's success.
-              </p>
-            </motion.div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {team.map((member, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-background rounded-2xl p-6 border border-border hover:border-primary/30 transition-all"
-                >
-                  <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center mx-auto mb-4">
-                    <span className="font-display font-bold text-2xl text-primary">
-                      {member.name.charAt(0)}
-                    </span>
-                  </div>
-                  <h3 className="font-display text-lg font-bold text-foreground text-center mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-sm text-primary text-center mb-3">{member.role}</p>
-                  <p className="text-sm text-muted-foreground text-center">{member.bio}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section> */}
 
-        {/* Timeline Section */}
-        <section className="py-20 bg-background">
+        <section className="py-20">
           <div className="container mx-auto px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -219,7 +172,7 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-12"
             >
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
                 Our Journey
               </h2>
             </motion.div>
@@ -234,11 +187,11 @@ const About = () => {
                   className="flex gap-6 mb-8 last:mb-0"
                 >
                   <div className="flex flex-col items-center">
-                    <div className="w-4 h-4 rounded-full bg-primary" />
+                    <div className="w-4 h-4 rounded-full bg-foreground" />
                     {index < milestones.length - 1 && <div className="w-0.5 h-full bg-border mt-2" />}
                   </div>
                   <div className="pb-8">
-                    <span className="font-display font-bold text-primary">{milestone.year}</span>
+                    <span className="font-serif font-bold text-foreground">{milestone.year}</span>
                     <p className="text-foreground mt-1">{milestone.event}</p>
                   </div>
                 </motion.div>

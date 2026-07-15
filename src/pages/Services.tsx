@@ -58,9 +58,7 @@ const Services = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        {/* Hero Section */}
-        <section className="pt-32 pb-20 bg-hero-gradient relative overflow-hidden">
-          <div className="absolute inset-0 geometric-grid opacity-20" />
+        <section className="pt-32 pb-20 bg-secondary/50 relative overflow-hidden">
           <div className="container mx-auto px-4 md:px-6 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -68,11 +66,11 @@ const Services = () => {
               transition={{ duration: 0.6 }}
               className="max-w-3xl mx-auto text-center"
             >
-              <span className="inline-block font-display text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-4">
+              <span className="inline-block font-sans text-sm font-semibold tracking-wider uppercase text-foreground/60 mb-4">
                 Our Services
               </span>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                Complete <span className="text-gradient">Digital Twin</span> Solutions
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-6">
+                Complete <span className="italic">Digital Twin</span> Solutions
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 From capture to hosting, we provide end-to-end solutions that transform 
@@ -82,8 +80,7 @@ const Services = () => {
           </div>
         </section>
 
-        {/* Services Grid */}
-        <section className="py-20 bg-card">
+        <section className="py-20">
           <div className="container mx-auto px-4 md:px-6">
             <div className="space-y-16">
               {services.map((service, index) => (
@@ -98,36 +95,36 @@ const Services = () => {
                   }`}
                 >
                   <div className={index % 2 === 1 ? "md:order-2" : ""}>
-                    <div className="w-16 h-16 rounded-2xl bg-accent-gradient flex items-center justify-center mb-6">
-                      <service.icon className="w-8 h-8 text-primary-foreground" />
+                    <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center mb-6">
+                      <service.icon className="w-8 h-8 text-foreground" />
                     </div>
-                    <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
                       {service.title}
                     </h2>
                     <p className="text-muted-foreground leading-relaxed mb-6">
                       {service.description}
                     </p>
                     <div className="mb-6">
-                      <span className="font-display font-bold text-2xl text-gradient">
+                      <span className="font-serif font-bold text-2xl text-foreground">
                         {service.pricing}
                       </span>
                     </div>
                     <Link to={service.link}>
-                      <Button variant="hero" size="lg" className="group">
+                      <Button className="rounded-full bg-foreground text-background hover:bg-foreground/90 font-sans normal-case tracking-normal group">
                         Learn More
                         <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                       </Button>
                     </Link>
                   </div>
-                  <div className={`bg-background rounded-2xl p-8 border border-border ${index % 2 === 1 ? "md:order-1" : ""}`}>
-                    <h3 className="font-display font-semibold text-foreground mb-6">
+                  <div className={`bg-secondary/50 rounded-2xl p-8 border border-border ${index % 2 === 1 ? "md:order-1" : ""}`}>
+                    <h3 className="font-serif font-semibold text-foreground mb-6">
                       What's Included
                     </h3>
                     <ul className="space-y-4">
                       {service.features.map((feature, fIndex) => (
                         <li key={fIndex} className="flex items-start gap-3">
-                          <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <Check className="w-3 h-3 text-primary" />
+                          <div className="w-5 h-5 rounded-full bg-foreground/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <Check className="w-3 h-3 text-foreground" />
                           </div>
                           <span className="text-muted-foreground">{feature}</span>
                         </li>
@@ -140,8 +137,7 @@ const Services = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-secondary/50">
           <div className="container mx-auto px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -150,14 +146,14 @@ const Services = () => {
               transition={{ duration: 0.6 }}
               className="max-w-3xl mx-auto text-center"
             >
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
+              <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
                 Not Sure Which Service You Need?
               </h2>
               <p className="text-muted-foreground mb-8">
                 Our team will help you choose the right solution for your property and budget.
               </p>
               <Link to="/contact">
-                <Button variant="hero" size="xl">
+                <Button className="rounded-full bg-foreground text-background hover:bg-foreground/90 font-sans normal-case tracking-normal">
                   Get a Free Consultation
                 </Button>
               </Link>

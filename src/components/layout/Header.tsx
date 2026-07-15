@@ -50,9 +50,6 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-2">
             <img src={logo} alt="Voxel Space Logo" className="h-10 md:h-12 w-auto object-contain" />
-            {/* <span className="font-serif text-lg md:text-xl text-foreground hidden sm:inline">
-              Voxel Space
-            </span> */}
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">

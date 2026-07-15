@@ -68,9 +68,7 @@ const Careers = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        {/* Hero Section */}
-        <section className="pt-32 pb-20 bg-hero-gradient relative overflow-hidden">
-          <div className="absolute inset-0 geometric-grid opacity-20" />
+        <section className="pt-32 pb-20 bg-secondary/50 relative overflow-hidden">
           <div className="container mx-auto px-4 md:px-6 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -78,11 +76,11 @@ const Careers = () => {
               transition={{ duration: 0.6 }}
               className="max-w-3xl mx-auto text-center"
             >
-              <span className="inline-block font-display text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-4">
+              <span className="inline-block font-sans text-sm font-semibold tracking-wider uppercase text-foreground/60 mb-4">
                 Careers
               </span>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                Join Our <span className="text-gradient">Growing Team</span>
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-6">
+                Join Our <span className="italic">Growing Team</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Help us transform how the world experiences commercial properties. We're looking for passionate 
@@ -92,8 +90,7 @@ const Careers = () => {
           </div>
         </section>
 
-        {/* Benefits Section */}
-        <section className="py-20 bg-card">
+        <section className="py-20">
           <div className="container mx-auto px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -102,7 +99,7 @@ const Careers = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-12"
             >
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
                 Why Work With Us?
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -117,12 +114,12 @@ const Careers = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-background rounded-xl p-6 border border-border text-center"
+                  className="bg-secondary/50 rounded-xl p-6 border border-border text-center"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-accent-gradient flex items-center justify-center mx-auto mb-4">
-                    <benefit.icon className="w-6 h-6 text-primary-foreground" />
+                  <div className="w-12 h-12 rounded-xl bg-background flex items-center justify-center mx-auto mb-4">
+                    <benefit.icon className="w-6 h-6 text-foreground" />
                   </div>
-                  <h3 className="font-display font-bold text-lg text-foreground mb-2">{benefit.title}</h3>
+                  <h3 className="font-serif font-bold text-lg text-foreground mb-2">{benefit.title}</h3>
                   <p className="text-sm text-muted-foreground">{benefit.description}</p>
                 </motion.div>
               ))}
@@ -130,8 +127,7 @@ const Careers = () => {
           </div>
         </section>
 
-        {/* Open Positions */}
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-secondary/50">
           <div className="container mx-auto px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -140,7 +136,7 @@ const Careers = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-12"
             >
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
                 Open Positions
               </h2>
               <p className="text-muted-foreground">
@@ -155,14 +151,14 @@ const Careers = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-card rounded-xl p-6 border border-border hover:border-primary/30 transition-all group"
+                  className="bg-background rounded-xl p-6 border border-border hover:border-border/80 transition-all group"
                 >
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <div>
-                      <span className="inline-block text-xs font-semibold tracking-wider uppercase text-primary mb-2">
+                      <span className="inline-block text-xs font-semibold tracking-wider uppercase text-foreground/60 mb-2">
                         {job.department}
                       </span>
-                      <h3 className="font-display text-xl font-bold text-foreground mb-2">
+                      <h3 className="font-serif text-xl text-foreground mb-2">
                         {job.title}
                       </h3>
                       <p className="text-sm text-muted-foreground mb-3">{job.description}</p>
@@ -178,7 +174,7 @@ const Careers = () => {
                       </div>
                     </div>
                     <Link to="/contact">
-                      <Button variant="heroOutline" className="group-hover:bg-primary group-hover:text-primary-foreground">
+                      <Button variant="outline" className="rounded-full border-border font-sans normal-case tracking-normal group-hover:bg-foreground group-hover:text-background">
                         Apply Now
                         <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>
@@ -190,8 +186,7 @@ const Careers = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 bg-card">
+        <section className="py-20">
           <div className="container mx-auto px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -200,14 +195,14 @@ const Careers = () => {
               transition={{ duration: 0.6 }}
               className="max-w-3xl mx-auto text-center"
             >
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
+              <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
                 Don't See the Right Role?
               </h2>
               <p className="text-muted-foreground mb-8">
                 We're always looking for talented people. Send us your CV and we'll keep you in mind for future opportunities.
               </p>
               <Link to="/contact">
-                <Button variant="hero" size="xl">
+                <Button className="rounded-full bg-foreground text-background hover:bg-foreground/90 font-sans normal-case tracking-normal">
                   Get in Touch
                 </Button>
               </Link>

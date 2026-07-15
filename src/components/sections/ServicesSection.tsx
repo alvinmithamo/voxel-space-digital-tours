@@ -46,9 +46,8 @@ const cardVariants = {
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 md:py-32 bg-gray-50 relative overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        {/* Section Header */}
+    <section id="services" className="py-20 md:py-28 bg-secondary/50">
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,10 +55,10 @@ const ServicesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="inline-block font-display text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-4">
+          <span className="inline-block font-sans text-sm font-semibold tracking-wider uppercase text-foreground/60 mb-4">
             Our Services
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
             Complete Digital Twin Solutions
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
@@ -68,7 +67,6 @@ const ServicesSection = () => {
           </p>
         </motion.div>
 
-        {/* Services Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -80,43 +78,38 @@ const ServicesSection = () => {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="group relative bg-white rounded-2xl p-8 border border-gray-200 hover:border-gray-300 transition-all duration-300"
+              className="group relative bg-background rounded-2xl p-8 border border-border hover:border-border/80 transition-all duration-300"
             >
-              {/* Icon */}
-              <div className="w-14 h-14 rounded-xl bg-gray-100 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
-                <service.icon className="w-7 h-7 text-primary" />
+              <div className="w-14 h-14 rounded-xl bg-secondary flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
+                <service.icon className="w-7 h-7 text-foreground" />
               </div>
 
-              {/* Content */}
-              <h3 className="font-display text-xl font-bold text-foreground mb-4">
+              <h3 className="font-serif text-xl text-foreground mb-4">
                 {service.title}
               </h3>
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 {service.description}
               </p>
 
-              {/* Features */}
               <ul className="space-y-2 mb-8">
                 {service.features.map((feature, fIndex) => (
                   <li key={fIndex} className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-foreground" />
                     {feature}
                   </li>
                 ))}
               </ul>
 
-              {/* Learn More Link */}
               <a
                 href="#"
-                className="inline-flex items-center text-sm font-semibold text-primary hover:text-primary/80 transition-colors group/link"
+                className="inline-flex items-center text-sm font-medium text-foreground hover:text-foreground/80 transition-colors group/link"
               >
                 Learn More
                 <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
               </a>
 
-              {/* Decorative Corner */}
               <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden">
-                <div className="absolute top-4 right-4 w-16 h-16 border border-primary/10 rounded-full" />
+                <div className="absolute top-4 right-4 w-16 h-16 border border-border/10 rounded-full" />
               </div>
             </motion.div>
           ))}

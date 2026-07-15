@@ -30,9 +30,8 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-24 md:py-32 bg-gray-50 relative overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        {/* Section Header */}
+    <section className="py-20 md:py-28 bg-secondary/50">
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,15 +39,14 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="inline-block font-display text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-4">
+          <span className="inline-block font-sans text-sm font-semibold tracking-wider uppercase text-foreground/60 mb-4">
             Testimonials
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground">
             What Our Clients Say
           </h2>
         </motion.div>
 
-        {/* Testimonials Grid */}
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
@@ -57,39 +55,35 @@ const TestimonialsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="relative bg-white rounded-2xl p-8 border border-gray-200 hover:border-gray-300 transition-all duration-200"
+              className="relative bg-background rounded-2xl p-8 border border-border hover:border-border/80 transition-all duration-200"
             >
-              {/* Quote Icon */}
               <div className="absolute -top-4 left-8">
-                <div className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                  <Quote className="w-4 h-4 text-primary" />
+                <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center">
+                  <Quote className="w-4 h-4 text-foreground" />
                 </div>
               </div>
 
-              {/* Rating */}
               <div className="flex gap-1 mb-6 mt-2">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star
                     key={i}
-                    className="w-4 h-4 fill-primary text-primary"
+                    className="w-4 h-4 fill-foreground text-foreground"
                   />
                 ))}
               </div>
 
-              {/* Quote */}
               <p className="text-muted-foreground leading-relaxed mb-6">
                 "{testimonial.quote}"
               </p>
 
-              {/* Author */}
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
-                  <span className="font-display font-bold text-lg text-primary">
+                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center">
+                  <span className="font-serif font-bold text-lg text-foreground">
                     {testimonial.author.charAt(0)}
                   </span>
                 </div>
                 <div>
-                  <div className="font-display font-semibold text-foreground">
+                  <div className="font-serif font-semibold text-foreground">
                     {testimonial.author}
                   </div>
                   <div className="text-sm text-muted-foreground">

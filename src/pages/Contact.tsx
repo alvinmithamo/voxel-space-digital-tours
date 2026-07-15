@@ -69,9 +69,7 @@ const Contact = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        {/* Hero Section */}
-        <section className="pt-32 pb-20 bg-hero-gradient relative overflow-hidden">
-          <div className="absolute inset-0 geometric-grid opacity-20" />
+        <section className="pt-32 pb-20 bg-secondary/50 relative overflow-hidden">
           <div className="container mx-auto px-4 md:px-6 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -79,11 +77,11 @@ const Contact = () => {
               transition={{ duration: 0.6 }}
               className="max-w-3xl mx-auto text-center"
             >
-              <span className="inline-block font-display text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-4">
+              <span className="inline-block font-sans text-sm font-semibold tracking-wider uppercase text-foreground/60 mb-4">
                 Get in Touch
               </span>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                Let's Start Your <span className="text-gradient">Project</span>
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-6">
+                Let's Start Your <span className="italic">Project</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Ready to transform your property? Get in touch for a free consultation and quote.
@@ -92,24 +90,22 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section className="py-20 bg-card">
+        <section className="py-20">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid lg:grid-cols-2 gap-12">
-              {/* Contact Form */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="font-display text-2xl font-bold text-foreground mb-6">
+                <h2 className="font-serif text-2xl text-foreground mb-6">
                   Send Us a Message
                 </h2>
                 {isSubmitted ? (
-                  <div className="bg-background rounded-2xl p-8 border border-primary/30 text-center">
-                    <CheckCircle className="w-16 h-16 text-primary mx-auto mb-4" />
-                    <h3 className="font-display text-xl font-bold text-foreground mb-2">
+                  <div className="bg-background rounded-2xl p-8 border border-border text-center">
+                    <CheckCircle className="w-16 h-16 text-foreground mx-auto mb-4" />
+                    <h3 className="font-serif text-xl text-foreground mb-2">
                       Message Sent!
                     </h3>
                     <p className="text-muted-foreground">
@@ -188,7 +184,7 @@ const Contact = () => {
                         className="bg-background border-border resize-none"
                       />
                     </div>
-                    <Button type="submit" variant="hero" size="lg" className="w-full md:w-auto">
+                    <Button type="submit" className="rounded-full bg-foreground text-background hover:bg-foreground/90 font-sans normal-case tracking-normal w-full md:w-auto">
                       <Send className="w-4 h-4 mr-2" />
                       Send Message
                     </Button>
@@ -203,17 +199,17 @@ const Contact = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="font-display text-2xl font-bold text-foreground mb-6">
+                <h2 className="font-serif text-2xl text-foreground mb-6">
                   Contact Information
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-6 mb-8">
                   {contactInfo.map((info, index) => (
                     <div
                       key={index}
-                      className="bg-background rounded-xl p-6 border border-border"
+                      className="bg-secondary/50 rounded-xl p-6 border border-border"
                     >
-                      <info.icon className="w-8 h-8 text-primary mb-4" />
-                      <h3 className="font-display font-semibold text-foreground mb-2">
+                      <info.icon className="w-8 h-8 text-foreground mb-4" />
+                      <h3 className="font-serif font-semibold text-foreground mb-2">
                         {info.title}
                       </h3>
                       {info.details.map((detail, dIndex) => (
@@ -225,7 +221,6 @@ const Contact = () => {
                   ))}
                 </div>
 
-                {/* Map Placeholder */}
                 <div className="bg-background rounded-xl border border-border overflow-hidden h-64">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.277444357954!2d36.80278!3d-1.26389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1a6bf7445dc1%3A0x940f3c4f1c9a7f6a!2sWestlands%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1699900000000"
@@ -243,8 +238,7 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-secondary/50">
           <div className="container mx-auto px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -253,7 +247,7 @@ const Contact = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-12"
             >
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
                 Frequently Asked Questions
               </h2>
             </motion.div>
@@ -265,9 +259,9 @@ const Contact = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-card rounded-xl p-6 border border-border"
+                  className="bg-background rounded-xl p-6 border border-border"
                 >
-                  <h3 className="font-display font-semibold text-foreground mb-2">
+                  <h3 className="font-serif font-semibold text-foreground mb-2">
                     {faq.question}
                   </h3>
                   <p className="text-muted-foreground">{faq.answer}</p>

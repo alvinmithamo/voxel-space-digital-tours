@@ -74,9 +74,7 @@ const Blog = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        {/* Hero Section */}
-        <section className="pt-32 pb-20 bg-hero-gradient relative overflow-hidden">
-          <div className="absolute inset-0 geometric-grid opacity-20" />
+        <section className="pt-32 pb-20 bg-secondary/50 relative overflow-hidden">
           <div className="container mx-auto px-4 md:px-6 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -84,11 +82,11 @@ const Blog = () => {
               transition={{ duration: 0.6 }}
               className="max-w-3xl mx-auto text-center"
             >
-              <span className="inline-block font-display text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-4">
+              <span className="inline-block font-sans text-sm font-semibold tracking-wider uppercase text-foreground/60 mb-4">
                 Blog & News
               </span>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                Insights & <span className="text-gradient">Updates</span>
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-6">
+                Insights & <span className="italic">Updates</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Stay updated with the latest trends in digital twins, virtual tours, and commercial property marketing.
@@ -97,14 +95,13 @@ const Blog = () => {
           </div>
         </section>
 
-        {/* Categories */}
-        <section className="py-8 bg-card border-b border-border">
+        <section className="py-8 border-b border-border">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-wrap items-center justify-center gap-3">
               {categories.map((category) => (
                 <button
                   key={category}
-                  className="px-4 py-2 rounded-full text-sm font-medium bg-muted text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all"
+                  className="px-4 py-2 rounded-full text-sm font-medium bg-secondary text-foreground hover:bg-foreground hover:text-background transition-all"
                 >
                   {category}
                 </button>
@@ -113,8 +110,7 @@ const Blog = () => {
           </div>
         </section>
 
-        {/* Blog Grid */}
-        <section className="py-20 bg-background">
+        <section className="py-20">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogPosts.map((post, index) => (
@@ -124,7 +120,7 @@ const Blog = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="group bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all"
+                  className="group bg-background rounded-2xl overflow-hidden border border-border hover:border-border/80 transition-all"
                 >
                   <div className="aspect-[16/10] overflow-hidden">
                     <img
@@ -134,10 +130,10 @@ const Blog = () => {
                     />
                   </div>
                   <div className="p-6">
-                    <span className="inline-block text-xs font-semibold tracking-wider uppercase text-primary mb-3">
+                    <span className="inline-block text-xs font-semibold tracking-wider uppercase text-foreground/60 mb-3">
                       {post.category}
                     </span>
-                    <h2 className="font-display text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    <h2 className="font-serif text-xl text-foreground mb-3 group-hover:text-foreground/80 transition-colors">
                       {post.title}
                     </h2>
                     <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
@@ -159,7 +155,7 @@ const Blog = () => {
                     </div>
                     <Link
                       to="#"
-                      className="inline-flex items-center text-sm font-semibold text-primary hover:text-primary/80 transition-colors group/link"
+                      className="inline-flex items-center text-sm font-medium text-foreground hover:text-foreground/80 transition-colors group/link"
                     >
                       Read More
                       <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
@@ -171,8 +167,7 @@ const Blog = () => {
           </div>
         </section>
 
-        {/* Newsletter CTA */}
-        <section className="py-20 bg-card">
+        <section className="py-20 bg-secondary/50">
           <div className="container mx-auto px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -181,7 +176,7 @@ const Blog = () => {
               transition={{ duration: 0.6 }}
               className="max-w-2xl mx-auto text-center"
             >
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
                 Subscribe to Our Newsletter
               </h2>
               <p className="text-muted-foreground mb-8">
@@ -195,7 +190,7 @@ const Blog = () => {
                 />
                 <button
                   type="submit"
-                  className="h-12 px-8 rounded-lg bg-accent-gradient text-primary-foreground font-display font-semibold uppercase tracking-wide hover:shadow-glow transition-all"
+                  className="h-12 px-8 rounded-lg bg-foreground text-background font-sans font-semibold normal-case tracking-normal hover:bg-foreground/90 transition-all"
                 >
                   Subscribe
                 </button>
