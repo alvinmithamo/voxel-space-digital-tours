@@ -208,7 +208,7 @@ const ContactSection = () => {
                   <div>
                     <p className="text-sm font-medium text-foreground">Email us</p>
                     <a href="mailto:info@voxelspace.co.ke" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      info@voxelspace.co.ke
+                      info@voxelspaceke.com
                     </a>
                   </div>
                 </li>
@@ -224,7 +224,7 @@ const ContactSection = () => {
                   <div>
                     <p className="text-sm font-medium text-foreground">Based in</p>
                     <p className="text-sm text-muted-foreground">
-                      Nairobi, Kenya — serving spaces across East Africa
+                      Nairobi, Kenya — serving spaces across East Africa and beyond
                     </p>
                   </div>
                 </li>

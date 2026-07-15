@@ -26,7 +26,7 @@ const PartnershipsSection = () => {
             className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:gap-3 transition-all"
           >
             <Mail className="w-4 h-4" />
-            Get in touch with us at info@voxelspace.co.ke
+            Get in touch with us at info@voxelspaceke.com
           </a>
         </motion.div>
       </div>

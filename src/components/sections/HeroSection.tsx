@@ -8,7 +8,7 @@ const trustBadges = [
   { icon: Globe, label: "Browser-native", sublabel: "No app, no headset" },
   { icon: BadgeCheck, label: "Fixed-price projects", sublabel: "No surprises" },
   { icon: Zap, label: "Single-day capture", sublabel: "For most spaces" },
-  { icon: Code, label: "Embeds anywhere", sublabel: "One line of HTML" },
+  { icon: Code, label: "Embeds anywhere", sublabel: "3D virtual tours integrated on your website" },
 ];
 
 const HeroSection = () => {
