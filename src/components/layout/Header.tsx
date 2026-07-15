@@ -9,7 +9,7 @@ const navLinks = [
   { href: "/#spaces", label: "Spaces" },
   { href: "/#process", label: "Process" },
   { href: "/#contact", label: "Contact" },
-  { href: "/portfolio", label: "Our Work" },
+  // { href: "/portfolio", label: "Our Work" },
 ];
 
 const Header = () => {
@@ -50,7 +50,7 @@ const Header = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Voxel Space Logo" className="h-10 md:h-12 w-auto object-contain" />
+            <img src={logo} alt="Voxel Space Logo" className="h-14 md:h-16 w-auto object-contain" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
