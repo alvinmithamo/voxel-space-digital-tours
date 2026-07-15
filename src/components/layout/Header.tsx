@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/voxel3.png";
+import logo from "@/assets/voxel space logo.png";
 
 const navLinks = [
   { href: "/#spaces", label: "Spaces" },
@@ -50,7 +50,7 @@ const Header = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Voxel Space Logo" className="h-14 md:h-16 w-auto object-contain" />
+            <img src={logo} alt="Voxel Space Logo" className="h-20 md:h-40 w-auto object-cover" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
