@@ -50,7 +50,7 @@ const Header = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Voxel Space Logo" className="h-20 md:h-40 w-auto object-cover" />
+            <img src={logo} alt="Voxel Space Logo" className="h-40 md:h-40 w-auto object-cover" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">

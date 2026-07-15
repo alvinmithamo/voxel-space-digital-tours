@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, ArrowUp, Linkedin, Instagram } from "lucide-react";
+// import logo from "../../assets/voxel-space-logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -14,7 +15,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <Link to="/" className="font-serif text-2xl text-background">
-              Voxel Space
+               {/* <img src={logo} alt="Voxel Space Logo" className="h-20 md:h-40 w-auto object-cover" /> */}
+            Voxel Space
             </Link>
             <p className="text-background/60 text-sm mt-4 leading-relaxed">
               © {currentYear} Voxel Space Ltd. All rights reserved.
