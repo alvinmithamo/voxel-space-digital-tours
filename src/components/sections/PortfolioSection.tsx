@@ -14,7 +14,7 @@ import home3 from "@/assets/home3.jpg";
 const projects = [
   {
     title: "Studio Apartment Tour",
-    category: "Demo",
+    category: "Residential",
     description:
       "Experience our cutting-edge 3D virtual tour technology. Click to explore this immersive walkthrough demo.",
     image: home1,
@@ -23,29 +23,40 @@ const projects = [
     tourUrl: "https://kuula.co/share/LYcNk?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1",
   },
   {
-    title: "Westlands Business Park",
-    category: "Commercial",
+    title: "Riara Road 1Bedroom Apartment",
+    category: "Residential",
     description:
-      "A full digital twin covering the lobby and office floors, giving tenants an immersive walkthrough before stepping foot on site.",
+      "Experience our cutting-edge 3D virtual tour technology. Click to explore this immersive walkthrough demo.",
     image: home2,
     tourLabel: "360° Immersive Tour",
+    is3DTour: true,
+    tourUrl: "https://realsee.ai/ByNN9VVD?theme=minimalist&unbranded=1",
   },
-  {
-    title: "Karen Garden Residence",
-    category: "Real Estate",
-    description:
-      "A fully immersive digital walkthrough inside a residential property, letting buyers explore the layout before visiting.",
-    image: home3,
-    tourLabel: "360° Immersive Tour",
-  },
-  {
-    title: "Gateway Mall Mombasa",
-    category: "Retail",
-    description:
-      "Immerse yourself in a complete 3D digital twin of a retail complex, where you can navigate through every corner and understand the layout.",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
-    tourLabel: "360° Immersive Tour",
-  },
+  
+  // {
+  //   title: "Westlands Business Park",
+  //   category: "Commercial",
+  //   description:
+  //     "A full digital twin covering the lobby and office floors, giving tenants an immersive walkthrough before stepping foot on site.",
+  //   image: home2,
+  //   tourLabel: "360° Immersive Tour",
+  // },
+  // {
+  //   title: "Karen Garden Residence",
+  //   category: "Real Estate",
+  //   description:
+  //     "A fully immersive digital walkthrough inside a residential property, letting buyers explore the layout before visiting.",
+  //   image: home3,
+  //   tourLabel: "360° Immersive Tour",
+  // },
+  // {
+  //   title: "Gateway Mall Mombasa",
+  //   category: "Retail",
+  //   description:
+  //     "Immerse yourself in a complete 3D digital twin of a retail complex, where you can navigate through every corner and understand the layout.",
+  //   image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
+  //   tourLabel: "360° Immersive Tour",
+  // },
 ];
 
 const PortfolioSection = () => {

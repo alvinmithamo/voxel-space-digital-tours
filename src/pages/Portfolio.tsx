@@ -20,6 +20,16 @@ const projects = [
   },
   {
     id: 2,
+    title: "Riara Road 1Bedroom Apartment",
+    category: "Residential",
+    location: "Virtual Demo",
+    result: "Live immersive experience",
+    description: "Experience our cutting-edge 3D virtual tour technology in this interactive sandbox environment.",
+    is3DTour: true,
+    tourUrl: "https://realsee.ai/ByNN9VVD?theme=minimalist&unbranded=1",
+  },
+  {
+    id: 3,
     title: "Westlands Business Park",
     category: "Commercial Office",
     location: "Nairobi, Kenya",
@@ -28,7 +38,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
   },
   {
-    id: 3,
+    id: 4,
     title: "Karen Shopping Mall",
     category: "Retail",
     location: "Nairobi, Kenya",
@@ -37,7 +47,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
   },
   {
-    id: 4,
+    id: 5,
     title: "Kilimani Towers",
     category: "Residential",
     location: "Nairobi, Kenya",
@@ -46,7 +56,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
   },
   {
-    id: 5,
+    id: 6,
     title: "Serena Safari Lodge",
     category: "Hospitality",
     location: "Masai Mara, Kenya",
@@ -55,7 +65,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80",
   },
   {
-    id: 6,
+    id: 7,
     title: "Gateway Mall Mombasa",
     category: "Retail",
     location: "Mombasa, Kenya",
@@ -64,7 +74,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=800&q=80",
   },
   {
-    id: 7,
+    id: 8,
     title: "Riverside Office Complex",
     category: "Commercial Office",
     location: "Nairobi, Kenya",
@@ -73,7 +83,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
   },
   {
-    id: 8,
+    id: 9,
     title: "Lake Naivasha Resort",
     category: "Hospitality",
     location: "Naivasha, Kenya",
@@ -82,7 +92,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
   },
   {
-    id: 9,
+    id: 10,
     title: "Runda Gardens Estate",
     category: "Residential",
     location: "Nairobi, Kenya",
