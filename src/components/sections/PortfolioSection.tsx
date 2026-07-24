@@ -7,8 +7,8 @@ import {
   DialogContent,
   DialogOverlay,
 } from "@/components/ui/dialog";
-import home1 from "@/assets/home1.jpg";
-import home2 from "@/assets/home2.jpg";
+import home1 from "@/assets/studio.png";
+import home2 from "@/assets/1bd.png";
 import home3 from "@/assets/home3.jpg";
 
 const projects = [
