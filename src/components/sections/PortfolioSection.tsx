@@ -13,16 +13,6 @@ import home3 from "@/assets/home3.jpg";
 
 const projects = [
   {
-    title: "Studio Apartment Tour",
-    category: "Residential",
-    description:
-      "Experience our cutting-edge 3D virtual tour technology. Click to explore this immersive walkthrough demo.",
-    image: home1,
-    tourLabel: "360° Immersive Tour",
-    is3DTour: true,
-    tourUrl: "https://kuula.co/share/LYcNk?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1",
-  },
-  {
     title: "Riara Road 1Bedroom Apartment",
     category: "Residential",
     description:
@@ -32,6 +22,17 @@ const projects = [
     is3DTour: true,
     tourUrl: "https://realsee.ai/ByNN9VVD?theme=minimalist&unbranded=1",
   },
+  {
+    title: "Studio Apartment Tour",
+    category: "Residential",
+    description:
+      "Experience our cutting-edge 3D virtual tour technology. Click to explore this immersive walkthrough demo.",
+    image: home1,
+    tourLabel: "360° Immersive Tour",
+    is3DTour: true,
+    tourUrl: "https://kuula.co/share/LYcNk?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1",
+  },
+  
   
   // {
   //   title: "Westlands Business Park",
