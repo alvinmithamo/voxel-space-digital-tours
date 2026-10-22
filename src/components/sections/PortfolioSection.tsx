@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
-  DialogOverlay,
+  DialogTitle,
 } from "@/components/ui/dialog";
 import home1 from "@/assets/studio.png";
 import home2 from "@/assets/1bd.png";
@@ -171,21 +171,30 @@ const PortfolioSection = () => {
       </div>
 
       <Dialog open={isTourOpen} onOpenChange={setIsTourOpen}>
-        <DialogOverlay className="bg-black/90" />
-        <DialogContent className="w-[95vw] h-[90vh] max-w-7xl p-0 bg-black border-0">
+        <DialogContent
+          hideClose
+          overlayClassName="z-[99] bg-black"
+          aria-describedby={undefined}
+          className="!fixed !inset-0 !left-0 !top-0 z-[100] flex !h-[100dvh] !max-h-[100dvh] !w-screen !max-w-none !translate-x-0 !translate-y-0 gap-0 overflow-hidden !rounded-none border-0 bg-black p-0 shadow-none data-[state=closed]:slide-out-to-left-0 data-[state=closed]:slide-out-to-top-0 data-[state=closed]:zoom-out-100 data-[state=open]:slide-in-from-left-0 data-[state=open]:slide-in-from-top-0 data-[state=open]:zoom-in-100 sm:!rounded-none"
+        >
+          <DialogTitle className="sr-only">3D Virtual Tour</DialogTitle>
           <button
+            type="button"
             onClick={() => setIsTourOpen(false)}
-            className="absolute right-4 top-4 z-10 w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/80 transition-colors"
+            aria-label="Close virtual tour"
+            className="absolute right-[max(1rem,env(safe-area-inset-right))] top-[max(1rem,env(safe-area-inset-top))] z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/60 text-white backdrop-blur-sm transition-colors hover:bg-black/80"
           >
-            <X className="w-5 h-5" />
+            <X className="h-5 w-5" />
           </button>
-          <iframe
-            src={activeTourUrl}
-            allowFullScreen={true}
-            frameBorder="0"
-            title="3D Virtual Tour"
-            className="w-full h-full"
-          />
+          {activeTourUrl ? (
+            <iframe
+              src={activeTourUrl}
+              allowFullScreen
+              title="3D Virtual Tour"
+              allow="fullscreen; xr-spatial-tracking; gyroscope; accelerometer; autoplay"
+              className="absolute inset-0 h-full w-full border-0"
+            />
+          ) : null}
         </DialogContent>
       </Dialog>
     </section>
